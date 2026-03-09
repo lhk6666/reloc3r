@@ -1,5 +1,4 @@
 import numpy as np
-import torch
 import os
 from scipy.spatial.transform import Rotation as R
 # from pdb import set_trace as bb
@@ -55,6 +54,7 @@ class Reloc3rVisloc:
         Returns:
             x (torch.Tensor): shape of (3), least squares intersection point
         """
+        torch = __import__("torch")
         n = points.shape[0]
         p = points[:, 0, :]
         q = points[:, 1, :]
